@@ -1,10 +1,13 @@
 <img width="129" height="77" alt="image" src="https://github.com/user-attachments/assets/3ad9fe3d-006f-470d-bb12-7a64036ebdc0" />
 
 DEBRE TABOR UNIVERSTY
+
 GAFAT INSTITUTE OF TECHNOLOGY
+
 DEPARTMENT OF COMPUTER SCIENCE
 
 👩‍💻 Authors:
+
     NAME                      ID NO    
 1. Abebe Tigabu .............. 0094
 2. Tesfaye Mihret ............ 0222
@@ -116,21 +119,6 @@ Median Income is the most important predictor of housing prices.
 
 Geographic location (latitude/longitude) also plays a major role.
 
-The model performs reasonably well but can be improved by:
-
-Using advanced models like Random Forest or XGBoost
-
-Adding polynomial or interaction terms
-
-Normalizing skewed features
-
-Incorporating more geographic or economic data
-
-📁 Files in Repository
-File	Description
-House_Price_Prediction.ipynb	Final Colab notebook with all steps
-cleaned_california_housing.csv	Preprocessed dataset used for modeling
-README.md	Project documentation
 🧩 Tools & Libraries
 
 Python
@@ -146,5 +134,3 @@ Seaborn
 Scikit-learn
 
 Google Colab
-
-👩‍💻 Author
