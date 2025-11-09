@@ -11,6 +11,7 @@ This project analyzes the **California Housing Prices** dataset and builds a **L
 
 ## 📂 Dataset
 Dataset Source: [California Housing Prices - Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices)
+
 🏘️ Dataset Description
 
 This dataset does not represent individual houses.
