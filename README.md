@@ -38,22 +38,30 @@ Average number of rooms, bedrooms, and people per household
 
 Geographical coordinates (latitude, longitude)
 
-# Dataset Description
+🗂️ Dataset Description
 
-The dataset provides aggregated census data for California districts.
-It does not represent individual houses, but rather average statistics for each neighborhood (block group).
+This dataset contains aggregated census information for California neighborhoods (block groups), not for individual houses.
+Each row represents a small area with average housing and demographic details.
 
-Column	Description	Example	Notes
-longitude	Longitude coordinate of the block group	-122.23	Western location
-latitude	Latitude coordinate of the block group	37.88	Northern location
-housing_median_age	Median age of houses in the area	41	Older = more established area
-total_rooms	Total number of rooms within the block group	880	Used for density calculation
-total_bedrooms	Total number of bedrooms in the block group	129	May contain missing values
-population	Total number of people living in the block group	322	Used for population density
-households	Total number of households (families) in the block group	126	Used for ratio features
-median_income	Median household income (in tens of thousands of USD)	8.0	8.0 = $80,000/year
-median_house_value	Median house value for the block group (USD)	452600	Target variable
-ocean_proximity	Category describing distance to ocean	"NEAR BAY"	Categorical feature
+longitude: Geographic longitude of the area (e.g., -122.23).
+
+latitude: Geographic latitude of the area (e.g., 37.88).
+
+housing_median_age: The median age of houses in the area.
+
+total_rooms: Total number of rooms within the area, used to measure housing density.
+
+total_bedrooms: Total number of bedrooms; some values may be missing.
+
+population: Total number of people living in the area.
+
+households: Total number of households (families).
+
+median_income: Median household income, expressed in tens of thousands of U.S. dollars (e.g., 8.0 = $80,000 per year).
+
+median_house_value: Median house value in U.S. dollars — this is the target variable.
+
+ocean_proximity: A categorical feature describing how close the area is to the ocean (e.g., “NEAR BAY”).
 
 # Note: median_income values are expressed in tens of thousands of dollars.
 For example, 8.0 = $80,000 annual income.
