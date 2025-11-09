@@ -1,3 +1,15 @@
+<img width="129" height="77" alt="image" src="https://github.com/user-attachments/assets/3ad9fe3d-006f-470d-bb12-7a64036ebdc0" />
+DEBRE TABOR UNIVERSTY
+GAFAT INSTITUTE OF TECHNOLOGY
+DEPARTMENT OF COMPUTER SCIENCE
+Authors:
+    NAME                       ID NO
+1. Abebe Tigabu .............. 0094
+2. Tesfaye Mihret ............ 0222
+3. Tomas  Bekele ............. 0318
+4. Daniel Yirga .............. 0706
+5. Hana Addis ................ 0768
+6. Asmera Abiyu .............. 0610
 # 🏡 California Housing Price Prediction
 
 ## 📘 Project Overview
