@@ -10,7 +10,7 @@
 
 # Authors:
 
-# Name                       ID NO    
+# Name                        ID_NO    
 1. Abebe Tigabu .............. 0094
 2. Tesfaye Mihret ............ 0222
 3. Tomas  Bekele ............. 0318
