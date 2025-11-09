@@ -1,94 +1,150 @@
 <img width="129" height="77" alt="image" src="https://github.com/user-attachments/assets/3ad9fe3d-006f-470d-bb12-7a64036ebdc0" />
 
 DEBRE TABOR UNIVERSTY
-
 GAFAT INSTITUTE OF TECHNOLOGY
-
 DEPARTMENT OF COMPUTER SCIENCE
 
-Authors:
-
-    NAME                       ID NO
-    
+👩‍💻 Authors:
+    NAME                      ID NO    
 1. Abebe Tigabu .............. 0094
 2. Tesfaye Mihret ............ 0222
 3. Tomas  Bekele ............. 0318
 4. Daniel Yirga .............. 0706
 5. Hana Addis ................ 0768
 6. Asmera Abiyu .............. 0610
-# 🏡 California Housing Price Prediction
 
-## 📘 Project Overview
-This project analyzes the **California Housing Prices** dataset and builds a **Linear Regression model** to predict median house values based on factors such as income, house age, and location characteristics.
+🏠 House Price Prediction using Linear Regression
+📘 Project Overview
 
-## 🎯 Objectives
-- Understand relationships between demographic and geographic variables.
-- Explore correlations between income, house age, and median house value.
-- Build a simple predictive model using Linear Regression.
-- Visualize key findings for clear interpretation.
+This project aims to predict the median house value for neighborhoods in California using data from the California Housing Prices dataset.
+Each record in the dataset represents a block group — a small area with 600–3,000 residents — rather than an individual house.
+The model uses various demographic and housing-related features to estimate housing prices and uncover relationships between income, location, and home values.
 
-## 📂 Dataset
-Dataset Source: [California Housing Prices - Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices)
+🎯 Objective
 
-🏘️ Dataset Description
+To build a Linear Regression model that predicts median_house_value based on factors such as:
 
-This dataset does not represent individual houses.
-Each row corresponds to a block group — a small neighborhood area defined by the U.S. Census Bureau, typically containing 600–3,000 people.
+Median household income
 
-All values are aggregated statistics for that area.
-For example:
+Housing median age
 
-median_income = median household income within the block group
+Average number of rooms, bedrooms, and people per household
 
-median_house_value = median value of houses in that block group
+Geographical coordinates (latitude, longitude)
 
-total_rooms, total_bedrooms, households, and population = totals for all homes and residents in the area
+🗂️ Dataset Description
 
-Each block group may include a mix of housing types such as single-family homes, apartments, and condominiums.
-The goal is to predict the median house value of each neighborhood, not the price of an individual property.
-**Key Features:**
-- `MedInc`: Median income in block group  
-- `HouseAge`: Median house age in block group  
-- `AveRooms`: Average number of rooms per household  
-- `AveBedrms`: Average number of bedrooms per household  
-- `Population`: Population of block group  
-- `AveOccup`: Average household size  
-- `Latitude` & `Longitude`: Coordinates  
-- `MedHouseVal`: Median house value (Target variable)
+The dataset provides aggregated census data for California districts.
+It does not represent individual houses, but rather average statistics for each neighborhood (block group).
 
-## 🧹 Data Cleaning
-- Handled missing values.
-- Dropped non-numeric columns for correlation analysis.
-- Converted `ocean_proximity` to categorical (encoded later if used in model).
+Column	Description	Example	Notes
+longitude	Longitude coordinate of the block group	-122.23	Western location
+latitude	Latitude coordinate of the block group	37.88	Northern location
+housing_median_age	Median age of houses in the area	41	Older = more established area
+total_rooms	Total number of rooms within the block group	880	Used for density calculation
+total_bedrooms	Total number of bedrooms in the block group	129	May contain missing values
+population	Total number of people living in the block group	322	Used for population density
+households	Total number of households (families) in the block group	126	Used for ratio features
+median_income	Median household income (in tens of thousands of USD)	8.0	8.0 = $80,000/year
+median_house_value	Median house value for the block group (USD)	452600	Target variable
+ocean_proximity	Category describing distance to ocean	"NEAR BAY"	Categorical feature
 
-## 📊 Exploratory Data Analysis (EDA)
-- Visualized feature correlations.
-- Found that `MedInc` (median income) has the **strongest positive correlation** with house prices.
-- Mapped geographic distribution using scatter plots.
+💡 Note: median_income values are expressed in tens of thousands of dollars.
+For example, 8.0 = $80,000 annual income.
 
-## 🤖 Model Building
-Used **Linear Regression** from `sklearn`:
-- Split data into training (80%) and test (20%).
-- Evaluated using **Mean Squared Error (MSE)** and **R² score**.
+🧹 Data Cleaning & Preprocessing
 
-**Example Result:**
-| Metric | Value |
-|--------|--------|
-| R² Score | 0.64 |
-| MSE | 0.45 |
+Checked dataset information and missing values
 
-## 📈 Key Visualizations
-- Correlation Heatmap  
-- Income vs. House Value Scatter Plot  
-- Predicted vs. Actual Values Plot  
+Filled missing total_bedrooms values with the median
 
-## 📁 Files in this Repository
-- `california_housing_price_prediction.ipynb` — Colab notebook
-- `README.md` — Project overview and results
+Created new derived features:
 
-## 🧠 Tools Used
-- Python
-- Pandas, NumPy
-- Matplotlib, Seaborn
-- Scikit-learn
-- Google Colab
+rooms_per_household = total_rooms / households
+
+bedrooms_per_room = total_bedrooms / total_rooms
+
+population_per_household = population / households
+
+Verified data types and summary statistics
+
+These new features help the model better capture housing density and household structure, which strongly influence house values.
+
+🔍 Exploratory Data Analysis (EDA)
+
+Examined summary statistics using describe()
+
+Visualized distributions and correlations using:
+
+Histograms for numerical features
+
+Heatmap for correlations
+
+Scatter plots (e.g., income vs. house value)
+
+Found strong positive correlation between median_income and median_house_value.
+
+🧠 Model Building
+
+Model Used: Linear Regression
+
+Data Split: 80% training, 20% testing
+
+Scaling: Numerical features normalized
+
+Encoding: Categorical feature ocean_proximity encoded using One-Hot Encoding
+
+📊 Model Evaluation
+
+Performance metrics:
+
+RMSE (Root Mean Squared Error): Measures how far predictions are from actual prices
+
+R² Score: Measures how well the model explains variance in house prices
+
+Example (typical results):
+
+Metric	Value
+RMSE	~68,000
+R² Score	~0.75
+
+This means the model explains roughly 75% of the variation in house prices.
+
+💬 Conclusion & Discussion
+
+Median Income is the most important predictor of housing prices.
+
+Geographic location (latitude/longitude) also plays a major role.
+
+The model performs reasonably well but can be improved by:
+
+Using advanced models like Random Forest or XGBoost
+
+Adding polynomial or interaction terms
+
+Normalizing skewed features
+
+Incorporating more geographic or economic data
+
+📁 Files in Repository
+File	Description
+House_Price_Prediction.ipynb	Final Colab notebook with all steps
+cleaned_california_housing.csv	Preprocessed dataset used for modeling
+README.md	Project documentation
+🧩 Tools & Libraries
+
+Python
+
+Pandas
+
+NumPy
+
+Matplotlib
+
+Seaborn
+
+Scikit-learn
+
+Google Colab
+
+👩‍💻 Author
