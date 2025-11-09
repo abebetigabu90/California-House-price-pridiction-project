@@ -11,7 +11,22 @@ This project analyzes the **California Housing Prices** dataset and builds a **L
 
 ## 📂 Dataset
 Dataset Source: [California Housing Prices - Kaggle](https://www.kaggle.com/datasets/camnugent/california-housing-prices)
+🏘️ Dataset Description
 
+This dataset does not represent individual houses.
+Each row corresponds to a block group — a small neighborhood area defined by the U.S. Census Bureau, typically containing 600–3,000 people.
+
+All values are aggregated statistics for that area.
+For example:
+
+median_income = median household income within the block group
+
+median_house_value = median value of houses in that block group
+
+total_rooms, total_bedrooms, households, and population = totals for all homes and residents in the area
+
+Each block group may include a mix of housing types such as single-family homes, apartments, and condominiums.
+The goal is to predict the median house value of each neighborhood, not the price of an individual property.
 **Key Features:**
 - `MedInc`: Median income in block group  
 - `HouseAge`: Median house age in block group  
