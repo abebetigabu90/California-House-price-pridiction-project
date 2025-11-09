@@ -10,13 +10,14 @@
 
 # Authors:
 
-# Name                        ID_NO    
-1. Abebe Tigabu .............. 0094
-2. Tesfaye Mihret ............ 0222
-3. Tomas  Bekele ............. 0318
-4. Daniel Yirga .............. 0706
-5. Hana Addis ................ 0768
-6. Asmera Abiyu .............. 0610
+| Name        | ID_NO  |
+|--------------|--------|
+| Abebe Tigabu   | 0094  |
+| Tesfaye Mihret | 0222  |
+| Tomas  Bekele  | 0318  |
+| Daniel Yirga   | 0706  |
+| Hana Addis     | 0768  |
+| Asmera Abiyu   | 0610  |
 
 #  House Price Prediction using Linear Regression
 #  Project Overview
