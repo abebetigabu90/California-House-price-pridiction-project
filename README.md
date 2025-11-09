@@ -1,14 +1,16 @@
-    <img width="129" height="77" alt="image" src="https://github.com/user-attachments/assets/3ad9fe3d-006f-470d-bb12-7a64036ebdc0" />
+<img width="129" height="77" alt="image" src="https://github.com/user-attachments/assets/3ad9fe3d-006f-470d-bb12-7a64036ebdc0" />
 
-DEBRE TABOR UNIVERSTY
 
-GAFAT INSTITUTE OF TECHNOLOGY
 
-DEPARTMENT OF COMPUTER SCIENCE
+# DEBRE TABOR UNIVERSTY
+
+# GAFAT INSTITUTE OF TECHNOLOGY
+
+# DEPARTMENT OF COMPUTER SCIENCE
 
 👩‍💻 Authors:
 
-    NAME                     ID NO    
+#   NAME                     ID NO    
 1. Abebe Tigabu .............. 0094
 2. Tesfaye Mihret ............ 0222
 3. Tomas  Bekele ............. 0318
@@ -16,14 +18,14 @@ DEPARTMENT OF COMPUTER SCIENCE
 5. Hana Addis ................ 0768
 6. Asmera Abiyu .............. 0610
 
-🏠 House Price Prediction using Linear Regression
-📘 Project Overview
+#  House Price Prediction using Linear Regression
+#  Project Overview
 
 This project aims to predict the median house value for neighborhoods in California using data from the California Housing Prices dataset.
 Each record in the dataset represents a block group — a small area with 600–3,000 residents — rather than an individual house.
 The model uses various demographic and housing-related features to estimate housing prices and uncover relationships between income, location, and home values.
 
-🎯 Objective
+# Objective
 
 To build a Linear Regression model that predicts median_house_value based on factors such as:
 
@@ -35,7 +37,7 @@ Average number of rooms, bedrooms, and people per household
 
 Geographical coordinates (latitude, longitude)
 
-🗂️ Dataset Description
+# Dataset Description
 
 The dataset provides aggregated census data for California districts.
 It does not represent individual houses, but rather average statistics for each neighborhood (block group).
@@ -52,10 +54,10 @@ median_income	Median household income (in tens of thousands of USD)	8.0	8.0 = $8
 median_house_value	Median house value for the block group (USD)	452600	Target variable
 ocean_proximity	Category describing distance to ocean	"NEAR BAY"	Categorical feature
 
-💡 Note: median_income values are expressed in tens of thousands of dollars.
+# Note: median_income values are expressed in tens of thousands of dollars.
 For example, 8.0 = $80,000 annual income.
 
-🧹 Data Cleaning & Preprocessing
+# Data Cleaning & Preprocessing
 
 Checked dataset information and missing values
 
@@ -73,7 +75,7 @@ Verified data types and summary statistics
 
 These new features help the model better capture housing density and household structure, which strongly influence house values.
 
-🔍 Exploratory Data Analysis (EDA)
+#  Exploratory Data Analysis (EDA)
 
 Examined summary statistics using describe()
 
@@ -87,7 +89,7 @@ Scatter plots (e.g., income vs. house value)
 
 Found strong positive correlation between median_income and median_house_value.
 
-🧠 Model Building
+# Model Building
 
 Model Used: Linear Regression
 
@@ -97,7 +99,7 @@ Scaling: Numerical features normalized
 
 Encoding: Categorical feature ocean_proximity encoded using One-Hot Encoding
 
-📊 Model Evaluation
+# Model Evaluation
 
 Performance metrics:
 
@@ -113,13 +115,13 @@ R² Score	~0.75
 
 This means the model explains roughly 75% of the variation in house prices.
 
-💬 Conclusion & Discussion
+# Conclusion & Discussion
 
 Median Income is the most important predictor of housing prices.
 
 Geographic location (latitude/longitude) also plays a major role.
 
-🧩 Tools & Libraries
+#  Tools & Libraries
 
 Python
 
