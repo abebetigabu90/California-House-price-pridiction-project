@@ -1,4 +1,4 @@
-<img width="129" height="77" alt="image" src="https://github.com/user-attachments/assets/3ad9fe3d-006f-470d-bb12-7a64036ebdc0" />
+    <img width="129" height="77" alt="image" src="https://github.com/user-attachments/assets/3ad9fe3d-006f-470d-bb12-7a64036ebdc0" />
 
 DEBRE TABOR UNIVERSTY
 
@@ -8,7 +8,7 @@ DEPARTMENT OF COMPUTER SCIENCE
 
 👩‍💻 Authors:
 
-    NAME                      ID NO    
+    NAME                     ID NO    
 1. Abebe Tigabu .............. 0094
 2. Tesfaye Mihret ............ 0222
 3. Tomas  Bekele ............. 0318
