@@ -19,80 +19,117 @@
 | Hana Addis     | 0768  |
 | Asmera Abiyu   | 0610  |
 
-# California House Price Prediction using Random Forest
+# 🏠 California House Price Prediction using Random Forest
 
 ## Project Overview
-This project uses the **California Housing Prices dataset** to predict the **median house value** for districts in California.  
-The goal is to explore relationships between features like income, age of housing, location, and engineered metrics, and build a predictive model for house prices using **Random Forest Regression**.
+This project predicts the **median house value** for districts in California using the **California Housing Prices dataset**.  
+Each record represents a **block group** (600–3,000 residents) with aggregated demographic and housing features.  
+
+The model leverages **Random Forest Regression** to capture complex, nonlinear relationships between housing values and predictors such as income, housing age, and geographic location.
 
 ---
 
-## Features Used
+## Objective
+- Predict `median_house_value` based on features like:
+  - Median household income (`median_income`)
+  - Housing median age (`housing_median_age`)
+  - Average rooms, bedrooms, and population per household
+  - Geographic coordinates (`longitude`, `latitude`)
+  - Engineered features:
+    - `rooms_per_household`
+    - `bedrooms_per_room`
+    - `population_per_household`
 
-- `median_income` — median income of households in the district  
-- `housing_median_age` — median age of the houses  
-- `longitude` & `latitude` — geographic location of the district  
-- Engineered features:
-  - `rooms_per_household`  
-  - `bedrooms_per_room`  
-  - `population_per_household`  
+---
+
+## Dataset Description
+| Feature | Description |
+|---------|-------------|
+| `longitude` | Geographic longitude of the area |
+| `latitude` | Geographic latitude of the area |
+| `housing_median_age` | Median age of houses in the block group |
+| `total_rooms` | Total number of rooms in the block group |
+| `total_bedrooms` | Total number of bedrooms (missing values handled) |
+| `population` | Total population in the block group |
+| `households` | Total households in the block group |
+| `median_income` | Median household income (in tens of thousands of dollars) |
+| `median_house_value` | Median house value in USD (target variable) |
+| `ocean_proximity` | Categorical: proximity to the ocean (`<1H OCEAN`, `NEAR BAY`, etc.) |
 
 ---
 
 ## Data Cleaning & Preprocessing
-
-- Checked for **missing values** and filled `total_bedrooms` with median values  
+- Checked for **missing values**; filled `total_bedrooms` with median  
 - Removed **duplicate rows**  
 - Applied **IQR winsorization** to reduce impact of outliers  
-- Performed **train-test split** (80/20)  
-- Filled missing values in test set using **training median**  
-- Added **engineered features** for better model performance  
+- Added **engineered features**:
+  - `rooms_per_household`  
+  - `bedrooms_per_room`  
+  - `population_per_household`  
+- Performed **train-test split** (80% training, 20% testing)  
+- Scaled numeric features and **one-hot encoded** categorical features
+
+---
+
+## Exploratory Data Analysis (EDA)
+- Summary statistics for numeric features using `describe()`  
+- Visualizations:
+  - Histograms for distributions  
+  - Heatmap for correlations  
+  - Scatter plots (e.g., median_income vs. median_house_value)  
+- Observed strong correlation between **median_income** and **house prices**  
 
 ---
 
 ## Modeling
-
-- Model used: **Random Forest Regressor**  
-- Preprocessing pipeline:
-  - Numeric features: median imputation + standard scaling  
-  - Categorical features: most frequent imputation + one-hot encoding  
-- Model trained on processed training data  
+- **Algorithm:** Random Forest Regressor  
+- **Pipeline:**
+  - Numeric: median imputation + StandardScaler  
+  - Categorical: most frequent imputation + OneHotEncoder  
+- Model trained on **cleaned and preprocessed training data**
 
 ---
 
 ## Model Performance
+| Metric | Value |
+|--------|-------|
+| RMSE | ~48,000 |
+| R² Score | ~0.82 |
 
-- **R² Score:** ~0.82 (explains 82% of the variance in house prices)  
-- **RMSE:** ~48,000 (predictions are reasonably close to actual values)  
-
-**Most influential features:**
-
-- Median income  
-- Geographic location (`latitude` & `longitude`)  
+**Top Features (importance):**
+- `median_income`  
+- Geographic coordinates (`latitude`, `longitude`)  
 - Engineered features (`rooms_per_household`, `bedrooms_per_room`, `population_per_household`)  
 
 ---
 
-## Model Strengths
-
+## Strengths
 - Captures **nonlinear relationships** automatically  
 - Handles **feature interactions** without manual engineering  
-- More robust to **outliers**  
-- Works well with both numeric and categorical features  
+- Robust to **outliers**  
+- Supports both **numeric and categorical features**  
 
 ---
 
-## Model Limitations
-
+## Limitations
 - Less interpretable than linear models  
 - Computationally heavier  
-- Can struggle with **extrapolation** (predicting outside the training range)  
+- Can struggle with **extrapolation** outside training data range  
 
 ---
 
 ## Possible Improvements
+- **Hyperparameter tuning** using GridSearchCV or RandomizedSearchCV  
+- Experiment with gradient boosting models: **XGBoost**, **LightGBM**, **CatBoost**  
+- Use **cross-validation** for reliable performance estimates  
+- Advanced feature engineering: spatial clusters, polynomial interactions  
 
-- Hyperparameter tuning with **GridSearchCV** or **RandomizedSearchCV**  
-- Use gradient boosting models such as **XGBoost**, **LightGBM**, or **CatBoost**  
-- Apply **cross-validation** to get more reliable performance estimates  
-- Advanced feature engineering (e.g., spatial clustering, polynomial interactions)  
+---
+
+## Tools & Libraries
+- Python 3.x  
+- Pandas  
+- NumPy  
+- Matplotlib & Seaborn  
+- Scikit-learn  
+- Google Colab
