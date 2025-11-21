@@ -19,7 +19,7 @@
 | Hana Addis     | 0768  |
 | Asmera Abiyu   | 0610  |
 
-# 🏠 California House Price Prediction using Random Forest
+# California House Price Prediction using Random Forest
 
 ## Project Overview
 This project predicts the **median house value** for districts in California using the **California Housing Prices dataset**.  
